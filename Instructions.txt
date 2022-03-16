@@ -1,0 +1,71 @@
+The "bot" folder has all the code under this project so in order to execute the bot, navigate inside that folder.
+
+-------------------------------------------------------------------------------------------
+
+
+CONTENTS:
+    1. PREREQUISITES
+        a. Getting the chrome driver where it should be
+    2. SETTING ALL THE ACCOUNT CREDENTIALS UP
+        a. Grammarly part
+        b. 1Text part
+    3. GETTING THE API KEYS FOR GOOGLE SPREADSHEET
+
+
+Follow these step-by-step
+-------------------------------------------------------------------------------------------
+
+
+1. PREREQUISITES:
+
+    1) Go to Chrome and type 'chrome://version/' in the address bar and see the version of chrome you're running
+    2) Next goto 'https://chromedriver.storage.googleapis.com/index.html' and find the folder having the name that corresponds to your version of chrome and download the driver for your OS
+    3) Move the folder into the same folder where the 'bot' folder lives
+    4) Go to the 'grammarly' folder inside the 'bot' folder and open 'constants.py' put the location of the chrome driver in the PATH_TO_CHROME_DRIVER variable
+    5) Go to the 'onetext' folder inside the 'bot' folder and open 'constants.py' put the location of the chrome driver in the PATH_TO_CHROME_DRIVER variable as well
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+2. SETTING ALL THE ACCOUNT CREDENTIALS:
+
+    a. Grammarly part:
+
+        1) Goto the 'grammarly' folder and open 'secretConst.py' file
+        2) In variables ACC_EMAIL and ACC_PASSWORD, write your Grammarly FREE account email and password respectively
+
+    b. 1Text part:
+
+        -- There's nothing to do in 1Text, all set-up is account independent --
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+3. GETTING ALL THE API KEYS FOR GOOGLE SPREADSHEET:
+
+    1) goto 'https://console.developers.google.com/' and use a Google account which you will be using to store the spreadsheet file
+    2) In the top navbar, you will be able to see a button to 'Create a project'. Go there and create a project naming whatever you like
+    3) After that, goto 'https://console.developers.google.com/apis/library' and in the search bar, type "Google drive" and enable the API that says google drive. Click on it and then "Enable"
+    4) And then under Google drive API find 'Create Credential' and click on it. This will ask a few questions.
+    5) When it asks "What data will you be using", choose "Application Data" and answer the subsequent questions
+    6) After all the setup there should be a "Credentials" tab in the left side. Click on it and go to the 'Keys' tab and click on "Add Key" and then 'new key'
+    7) This will have downloaded a JSON file in your downloads. Move the file to the 'spreadsheet' folder under the 'bot' folder and name it 'secret_key2.json'
+    8) Now opn the 'spreadsheet2.py' file and in place of <PATH TO SECRET_KEY FILE> put the full location of the secret_key2.py along with it's name
+    9) Go back to 'https://console.developers.google.com/apis/library' and search for "Google sheets" and click on enable
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+
+HOW TO USE?:
+
+    1) Navigate into the 'bot' directory
+    2) Put all the content you want tested (multiple files work too) in .txt file format in the 'content' directory
+    3) Using terminal or command prompt, run the main.py file using python (python3 for python v3 in Mac or Linux)
+    4) All the files that passed the Grammarly Free test will be copied to the cache/grammarlyQualifiers directory
